@@ -321,7 +321,7 @@
     .hospital-name {
       font-size: .95rem;
       font-weight: 600;
-      color: #000;
+      color: #054f77;
       letter-spacing: -0.03em;
       line-height: 1.3;
     }
@@ -707,7 +707,7 @@
 
         <div class="emergency-callout" id="textoCriticoAlerta">
           Se você NÃO consegue ir em segurança até a unidade indicada,
-          acione imediatamente o serviço de emergência da sua região.
+          acione imediatamente o serviço de emergência da sua região <CLICANDO AQUI>.
         </div>
       </section>
 
@@ -717,7 +717,7 @@
         <div class="hospital-name" id="destinoNomeCritico">
           <!-- dinamicamente preenchido -->
         </div>
-
+    
         <div class="hospital-meta" id="destinoMetaCritico">
           <!-- dinamicamente preenchido -->
         </div>
@@ -764,6 +764,16 @@
           Seu quadro não parece crítico imediato, mas requer atendimento
           em unidade com equipe disponível.
         </p>
+          <div class="cta-wrapper">
+        <button class="cta-button" id="btn-ir-triagem">
+          IR PARA PRÉ-TRIAGEM
+        </button>
+        <p class="cta-hint">
+          Em caso crítico, essas informações vão direto para a equipe certa
+          (pediatria, obstetrícia ou adulto).
+        </p>
+      </div>
+    </main>
       </section>
 
       <section class="destination-card">
@@ -1000,6 +1010,7 @@
         headerTitle.textContent = "RESULTADO DA PRÉ-TRIAGEM";
         headerSubtitle.textContent = "NÃO URGENTE • CUIDADO ELETIVO";
       }
+      
       window.scrollTo({
         top: 0,
         behavior: "instant"
