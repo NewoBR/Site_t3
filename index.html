@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Pré-Triage App (Protótipo)</title>
-
+  <title>FastSaude</title>
+  
+  
   <style>
     * {
       box-sizing: border-box;
@@ -13,8 +13,9 @@
       margin: 0;
       padding: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color:#9b111e;
     }
-
+  
     body {
       background-color: #f5f6f8;
       min-height: 100vh;
@@ -31,9 +32,9 @@
       background-color: #fff;
       border-radius: 24px;
       box-shadow:
-        0 24px 48px rgba(0, 0, 0, 0.08),
-        0 4px 12px rgba(0, 0, 0, 0.06);
-      border: 1px solid rgba(0, 0, 0, 0.05);
+        0 24px 48px rgba(0,0,0,0.08),
+        0 4px 12px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.05);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -43,8 +44,8 @@
       flex-shrink: 0;
       text-align: center;
       padding: 20px 16px 16px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-      background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      background: linear-gradient(to bottom, #054f77  0%, #9b111e 100%);
     }
 
     header h1 {
@@ -118,7 +119,7 @@
     .select-input {
       width: 100%;
       border-radius: 12px;
-      border: 1px solid rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(0,0,0,0.15);
       background-color: #fff;
       font-size: .9rem;
       line-height: 1.4;
@@ -134,7 +135,7 @@
 
     .lgpd-box {
       background-color: #f8f9fa;
-      border: 1px solid rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0,0,0,0.08);
       border-radius: 12px;
       padding: 12px 14px;
       font-size: .7rem;
@@ -182,8 +183,8 @@
       cursor: pointer;
       letter-spacing: -0.02em;
       box-shadow:
-        0 18px 30px rgba(15, 45, 70, 0.28),
-        0 4px 8px rgba(0, 0, 0, 0.08);
+        0 18px 30px rgba(15,45,70,0.28),
+        0 4px 8px rgba(0,0,0,0.08);
     }
 
     .cta-hint {
@@ -218,7 +219,7 @@
       line-height: 1.4;
       letter-spacing: -0.02em;
       background-color: #fff;
-      border: 1px solid rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(0,0,0,0.12);
       border-radius: 12px;
       padding: 14px 16px;
       cursor: pointer;
@@ -232,9 +233,9 @@
 
     .risk-card {
       border-radius: 18px;
-      border: 1px solid rgba(0, 0, 0, 0.07);
+      border: 1px solid rgba(0,0,0,0.07);
       padding: 16px 18px 18px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
       margin-bottom: 24px;
     }
 
@@ -261,7 +262,7 @@
       font-size: .7rem;
       font-weight: 600;
       line-height: 1;
-      border: 1px solid rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(0,0,0,0.15);
       letter-spacing: -0.03em;
       text-transform: uppercase;
     }
@@ -299,10 +300,10 @@
     .destination-card,
     .other-options {
       border-radius: 16px;
-      border: 1px solid rgba(0, 0, 0, 0.07);
+      border: 1px solid rgba(0,0,0,0.07);
       background: #ffffff;
       padding: 16px 18px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
       display: grid;
       gap: 12px;
       margin-bottom: 24px;
@@ -321,7 +322,7 @@
     .hospital-name {
       font-size: .95rem;
       font-weight: 600;
-      color: #054f77;
+      color: #9b111e;
       letter-spacing: -0.03em;
       line-height: 1.3;
     }
@@ -343,7 +344,7 @@
     .hospital-meta {
       font-size: .75rem;
       line-height: 1.4;
-      color: #555;
+      color: #ffffff;
       letter-spacing: -0.02em;
     }
 
@@ -358,12 +359,14 @@
       width: 72px;
       height: 72px;
       border-radius: 12px;
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      background-image: repeating-linear-gradient(45deg,
-          #d9d9d9 0px,
-          #d9d9d9 2px,
-          #ffffff 2px,
-          #ffffff 4px);
+      border: 1px solid rgba(0,0,0,0.12);
+      background-image: repeating-linear-gradient(
+        45deg,
+        #d9d9d9 0px,
+        #d9d9d9 2px,
+        #ffffff 2px,
+        #ffffff 4px
+      );
       display: flex;
       align-items: center;
       justify-content: center;
@@ -394,7 +397,7 @@
       color: #000;
       font-weight: 600;
       background-color: #fff2f2;
-      border: 1px solid rgba(255, 0, 0, 0.2);
+      border: 1px solid rgba(255,0,0,0.2);
       border-radius: 8px;
       padding: 10px 12px;
       margin-top: 8px;
@@ -442,18 +445,18 @@
       min-width: 110px;
       text-align: center;
       box-shadow:
-        0 14px 24px rgba(53, 104, 255, 0.28),
-        0 4px 8px rgba(0, 0, 0, 0.08);
+        0 14px 24px rgba(53,104,255,0.28),
+        0 4px 8px rgba(0,0,0,0.08);
       cursor: pointer;
       letter-spacing: -0.02em;
     }
 
     .warning-card {
       border-radius: 12px;
-      border: 1px solid rgba(0, 0, 0, 0.07);
+      border: 1px solid rgba(0,0,0,0.07);
       background: #fff5f5;
       padding: 14px 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
       font-size: .75rem;
       line-height: 1.4;
       color: #3a3a3a;
@@ -468,7 +471,7 @@
       line-height: 1.4;
       color: #8a8a8a;
       padding: 16px 16px 20px;
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      border-top: 1px solid rgba(0,0,0,0.06);
       background-color: #fafafa;
     }
 
@@ -477,734 +480,744 @@
       font-weight: 600;
     }
 
-    .risk-yellow {
-      background: #fffbe6;
-    }
-
+    .risk-yellow { background: #fffbe6; }
     .risk-yellow .risk-level-pill {
       background-color: #ffd633;
       color: #000;
     }
 
-    .risk-red {
-      background: #ffecec;
-    }
-
+    .risk-red { background: #ffecec; }
     .risk-red .risk-level-pill {
       background-color: #ff3b30;
       color: #fff;
     }
 
-    .risk-green {
-      background: #eaffec;
-    }
-
+    .risk-green { background: #eaffec; }
     .risk-green .risk-level-pill {
       background-color: #3ddc77;
       color: #000;
-      border: 1px solid rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0,0,0,0.2);
     }
 
-    .risk-blue {
-      background: #e8f4ff;
-    }
-
+    .risk-blue { background: #e8f4ff; }
     .risk-blue .risk-level-pill {
       background-color: #2d6cdf;
       color: #fff;
-      border: 1px solid rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0,0,0,0.2);
     }
   </style>
 </head>
-
 <body>
 
-  <div class="phone-frame">
+<div class="phone-frame">
 
-    <header>
-      <h1 id="headerTitle">PRÉ-TRIAGEM</h1>
-      <div class="subtitle" id="headerSubtitle">PROTOCOLO • ADULTO • PEDIATRIA • OBSTETRÍCIA</div>
-    </header>
+  <header>
+    <h1 id="headerTitle">PRÉ-TRIAGEM</h1>
+    <div class="subtitle" id="headerSubtitle">PROTOCOLO • ADULTO • PEDIATRIA • OBSTETRÍCIA</div>
+  </header>
 
-    <!-- TELA 1: CADASTRO BÁSICO -->
-    <main id="tela-cadastro-1" class="active">
-      <section class="intro-block">
-        <h2>Identificação</h2>
-        <div class="intro-desc">
-          Esses dados agilizam seu atendimento e direcionam você
-          para o tipo certo de unidade (adulto, pediatria ou obstetrícia).
-        </div>
-      </section>
+  <!-- TELA 1: CADASTRO BÁSICO -->
+  <main id="tela-cadastro-1" class="active">
+    <section class="intro-block">
+      <h2>Identificação</h2>
+      <div class="intro-desc">
+        Esses dados agilizam seu atendimento e direcionam você
+        para o tipo certo de unidade (adulto, pediatria ou obstetrícia).
+      </div>
+    </section>
 
-      <section class="form-group">
-        <div class="field-block">
-          <label class="field-label" for="nome">Nome completo</label>
-          <input class="text-input" id="nome" placeholder="Ex.: Maria Silva" />
-        </div>
+    <section class="form-group">
+      <div class="field-block">
+        <label class="field-label" for="nome">Nome completo</label>
+        <input class="text-input" id="nome" placeholder="Ex.: Maria Silva" />
+      </div>
 
-        <div class="field-block">
-          <label class="field-label" for="idade">Idade</label>
-          <input class="text-input" id="idade" placeholder="Ex.: 34" />
-        </div>
+      <div class="field-block">
+        <label class="field-label" for="idade">Idade</label>
+        <input class="text-input" id="idade" placeholder="Ex.: 34" />
+      </div>
 
-        <div class="field-block">
-          <label class="field-label" for="cpf">CPF</label>
-          <input class="text-input" id="cpf" placeholder="000.000.000-00" />
-        </div>
+      <div class="field-block">
+        <label class="field-label" for="cpf">CPF</label>
+        <input class="text-input" id="cpf" placeholder="000.000.000-00" />
+      </div>
 
-        <div class="field-block">
-          <label class="field-label" for="convenio">Convênio / Plano</label>
-          <input class="text-input" id="convenio" placeholder="Ex.: Plano Alfa Ouro" />
-        </div>
-      </section>
+      <div class="field-block">
+        <label class="field-label" for="convenio">Convênio / Plano</label>
+        <input class="text-input" id="convenio" placeholder="Ex.: Plano Alfa Ouro" />
+      </div>
+    </section>
 
-      <section class="lgpd-box">
-        Autorizando abaixo, você permite o uso assistencial dos seus dados
-        (adulto, pediatria, obstetrícia, telemedicina e APB). Isto NÃO substitui
-        avaliação presencial de enfermagem/médico.
-      </section>
+    <section class="lgpd-box">
+      Autorizando abaixo, você permite o uso assistencial dos seus dados
+      (adulto, pediatria, obstetrícia, telemedicina e APB). Isto NÃO substitui
+      avaliação presencial de enfermagem/médico.
+    </section>
 
-      <section class="consent-row">
-        <input type="checkbox" id="aceiteLGPD" />
-        <label for="aceiteLGPD">
-          Concordo com o uso assistencial dos meus dados pessoais e clínicos.
+    <section class="consent-row">
+      <input type="checkbox" id="aceiteLGPD" />
+      <label for="aceiteLGPD">
+        Concordo com o uso assistencial dos meus dados pessoais e clínicos.
+      </label>
+    </section>
+
+    <div class="cta-wrapper">
+      <button class="cta-button" id="btn-ir-anamnese">
+        CONTINUAR
+      </button>
+      <p class="cta-hint">
+        Você pode solicitar exclusão dos dados a qualquer momento.
+      </p>
+    </div>
+  </main>
+
+  <!-- TELA 2: ANAMNESE CLÍNICA -->
+  <main id="tela-cadastro-2">
+    <section class="intro-block">
+      <h2>Informações de saúde</h2>
+      <div class="intro-desc">
+        Isso ajuda a priorizar seu risco e já será enviado para a equipe
+        de acolhimento, se necessário.
+      </div>
+    </section>
+
+    <section class="form-group">
+      <div class="field-block">
+        <label class="field-label" for="comorb">Condições de saúde que você já tem</label>
+        <textarea class="text-area" id="comorb" placeholder="Ex.: hipertensão, diabetes, asma..."></textarea>
+      </div>
+
+      <div class="field-block">
+        <label class="field-label" for="medicacoes">Medicamentos de uso contínuo</label>
+        <textarea class="text-area" id="medicacoes" placeholder="Ex.: Losartana 50 mg, Metformina 850 mg..."></textarea>
+      </div>
+
+      <div class="field-block">
+        <label class="field-label" for="alergias">Alergias importantes</label>
+        <textarea class="text-area" id="alergias" placeholder="Ex.: Dipirona, penicilina... ou 'Nega alergias conhecidas'"></textarea>
+      </div>
+
+      <div class="field-block">
+        <label class="field-label" for="historicoFam">Histórico familiar relevante</label>
+        <textarea class="text-area" id="historicoFam" placeholder="Ex.: pai infartou antes dos 50; mãe com AVC."></textarea>
+      </div>
+
+      <div class="field-block">
+        <label class="field-label" for="gestante">Você está gestante?</label>
+        <select class="select-input" id="gestante">
+          <option value="">Selecione...</option>
+          <option value="nao">Não</option>
+          <option value="sim">Sim</option>
+          <option value="na">Não se aplica</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="cta-wrapper">
+      <button class="cta-button" id="btn-ir-triagem">
+        IR PARA PRÉ-TRIAGEM
+      </button>
+      <p class="cta-hint">
+        Em caso crítico, essas informações vão direto para a equipe certa
+        (pediatria, obstetrícia ou adulto).
+      </p>
+    </div>
+  </main>
+
+  <!-- TELA 3: SINTOMAS ATUAIS -->
+  <main id="tela-perguntas">
+    <section class="question-block">
+      <h2>O que você está sentindo agora?</h2>
+
+      <div class="symptom-list">
+        <label class="symptom-item">
+          <input type="checkbox" id="sintoma-peito" />
+          <div>Dor forte no peito / desmaio / suor frio</div>
         </label>
-      </section>
+
+        <label class="symptom-item">
+          <input type="checkbox" id="sintoma-falta-ar" />
+          <div>Dificuldade para respirar agora</div>
+        </label>
+
+        <label class="symptom-item">
+          <input type="checkbox" id="sintoma-febre" />
+          <div>Febre</div>
+        </label>
+
+        <label class="symptom-item">
+          <input type="checkbox" id="sintoma-vomito" />
+          <div>Vômito / mal-estar geral</div>
+        </label>
+
+        <label class="symptom-item">
+          <input type="checkbox" id="sintoma-trauma" />
+          <div>Trauma / queda / machucado recente</div>
+        </label>
+
+        <label class="symptom-item">
+          <input type="checkbox" id="sintoma-cefaleia" />
+          <div>“Pior dor de cabeça da vida” ou alteração neurológica</div>
+        </label>
+
+        <label class="symptom-item">
+          <input type="checkbox" id="sintoma-outro" />
+          <div>Outro sintoma leve ou dúvida clínica</div>
+        </label>
+      </div>
 
       <div class="cta-wrapper">
-        <button class="cta-button" id="btn-ir-anamnese">
-          CONTINUAR
+        <button class="cta-button" id="btn-avancar">
+          VERIFICAR SUA CLASSIFICAÇÃO
         </button>
         <p class="cta-hint">
-          Você pode solicitar exclusão dos dados a qualquer momento.
+          Isso é uma estimativa de prioridade. A avaliação final será realizada pela enfermagem.
         </p>
       </div>
-    </main>
+    </section>
+  </main>
 
-    <!-- TELA 2: ANAMNESE CLÍNICA -->
-    <main id="tela-cadastro-2">
-      <section class="intro-block">
-        <h2>Informações de saúde</h2>
-        <div class="intro-desc">
-          Isso ajuda a priorizar seu risco e já será enviado para a equipe
-          de acolhimento, se necessário.
-        </div>
-      </section>
-
-      <section class="form-group">
-        <div class="field-block">
-          <label class="field-label" for="comorb">Condições de saúde que você já tem</label>
-          <textarea class="text-area" id="comorb" placeholder="Ex.: hipertensão, diabetes, asma..."></textarea>
-        </div>
-
-        <div class="field-block">
-          <label class="field-label" for="medicacoes">Medicamentos de uso contínuo</label>
-          <textarea class="text-area" id="medicacoes" placeholder="Ex.: Losartana 50 mg, Metformina 850 mg..."></textarea>
-        </div>
-
-        <div class="field-block">
-          <label class="field-label" for="alergias">Alergias importantes</label>
-          <textarea class="text-area" id="alergias" placeholder="Ex.: Dipirona, penicilina... ou 'Nega alergias conhecidas'"></textarea>
-        </div>
-
-        <div class="field-block">
-          <label class="field-label" for="historicoFam">Histórico familiar relevante</label>
-          <textarea class="text-area" id="historicoFam" placeholder="Ex.: pai infartou antes dos 50; mãe com AVC."></textarea>
-        </div>
-
-        <div class="field-block">
-          <label class="field-label" for="gestante">Você está gestante?</label>
-          <select class="select-input" id="gestante">
-            <option value="">Selecione...</option>
-            <option value="nao">Não</option>
-            <option value="sim">Sim</option>
-            <option value="na">Não se aplica</option>
-          </select>
-        </div>
-      </section>
-
-      <div class="cta-wrapper">
-        <button class="cta-button" id="btn-ir-triagem">
-          IR PARA PRÉ-TRIAGEM
-        </button>
-        <p class="cta-hint">
-          Em caso crítico, essas informações vão direto para a equipe certa
-          (pediatria, obstetrícia ou adulto).
-        </p>
+  <!-- RESULTADO VERMELHO -->
+  <main id="tela-vermelho">
+    <section class="risk-card risk-red">
+      <div class="risk-header">
+        <div class="risk-left"><h2>Classificação sugerida</h2></div>
+        <div class="risk-level-pill" id="vermelhoLabel">VERMELHO • CRÍTICO</div>
       </div>
-    </main>
 
-    <!-- TELA 3: SINTOMAS ATUAIS -->
-    <main id="tela-perguntas">
-      <section class="question-block">
-        <h2>O que você está sentindo agora?</h2>
-
-        <div class="symptom-list">
-          <label class="symptom-item">
-            <input type="checkbox" id="sintoma-peito" />
-            <div>Dor forte no peito / desmaio / suor frio</div>
-          </label>
-
-          <label class="symptom-item">
-            <input type="checkbox" id="sintoma-falta-ar" />
-            <div>Dificuldade para respirar agora</div>
-          </label>
-
-          <label class="symptom-item">
-            <input type="checkbox" id="sintoma-febre" />
-            <div>Febre</div>
-          </label>
-
-          <label class="symptom-item">
-            <input type="checkbox" id="sintoma-vomito" />
-            <div>Vômito / mal-estar geral</div>
-          </label>
-
-          <label class="symptom-item">
-            <input type="checkbox" id="sintoma-trauma" />
-            <div>Trauma / queda / machucado recente</div>
-          </label>
-
-          <label class="symptom-item">
-            <input type="checkbox" id="sintoma-cefaleia" />
-            <div>“Pior dor de cabeça da vida” ou alteração neurológica</div>
-          </label>
-
-          <label class="symptom-item">
-            <input type="checkbox" id="sintoma-outro" />
-            <div>Outro sintoma leve ou dúvida clínica</div>
-          </label>
-        </div>
-
-        <div class="cta-wrapper">
-          <button class="cta-button" id="btn-avancar">
-            VERIFICAR SUA CLASSIFICAÇÃO
-          </button>
-          <p class="cta-hint">
-            Isso é uma estimativa de prioridade. A avaliação final será realizada pela enfermagem.
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <!-- RESULTADO VERMELHO -->
-    <main id="tela-vermelho">
-      <section class="risk-card risk-red">
-        <div class="risk-header">
-          <div class="risk-left">
-            <h2>Classificação sugerida</h2>
-          </div>
-          <div class="risk-level-pill" id="vermelhoLabel">VERMELHO • CRÍTICO</div>
-        </div>
-
-        <p class="risk-main-text" id="textoCriticoTitulo">
-          Você precisa de avaliação de emergência agora.
-        </p>
-
-        <p class="risk-detail" id="textoCriticoDetalhe">
-          Seus sinais indicam risco alto e você deve ser visto(a) sem demora.
-        </p>
-
-        <div class="emergency-callout" id="textoCriticoAlerta">
-          Se você NÃO consegue ir em segurança até a unidade indicada,
-          acione imediatamente o serviço de emergência da sua região <CLICANDO AQUI>.
-        </div>
-      </section>
-
-      <section class="destination-card">
-        <div class="destination-title">Vá agora para</div>
-
-        <div class="hospital-name" id="destinoNomeCritico">
-          <!-- dinamicamente preenchido -->
-        </div>
-    
-        <div class="hospital-meta" id="destinoMetaCritico">
-          <!-- dinamicamente preenchido -->
-        </div>
-
-        <div class="qr-area">
-          <div class="qr-box">
-            QR CODE<br />PRIORIDADE
-          </div>
-          <div class="qr-text">
-            Mostre este código na recepção de emergência.
-            <br /><br />
-            <span class="qr-code-label">Alerta enviado: SIM</span><br />
-            ID de chegada: <span id="idChegadaCritico">CRIT-7B21</span>
-          </div>
-        </div>
-
-        <div class="arrival-note" id="arrivalCriticoNote">
-          Ao chegar, informe:<br />
-          “Classificação sugerida vermelha pelo app.”
-        </div>
-      </section>
-
-      <section class="warning-card" id="warningCritico">
-        Telemedicina, consulta ambulatorial ou atendimento domiciliar
-        NÃO são seguros neste momento. Procure diretamente a unidade indicada.
-      </section>
-    </main>
-
-    <!-- RESULTADO AMARELO -->
-    <main id="tela-amarelo">
-      <section class="risk-card risk-yellow">
-        <div class="risk-header">
-          <div class="risk-left">
-            <h2>Classificação sugerida</h2>
-          </div>
-          <div class="risk-level-pill" id="amareloLabel">AMARELO • PRIORIDADE MODERADA</div>
-        </div>
-
-        <p class="risk-main-text" id="textoAmareloTitulo">
-          Você precisa de avaliação presencial hoje.
-        </p>
-
-        <p class="risk-detail" id="textoAmareloDetalhe">
-          Seu quadro não parece crítico imediato, mas requer atendimento
-          em unidade com equipe disponível.
-        </p>
-          <div class="cta-wrapper">
-        <button class="cta-button" id="btn-ir-triagem">
-          IR PARA PRÉ-TRIAGEM
-        </button>
-        <p class="cta-hint">
-          Em caso crítico, essas informações vão direto para a equipe certa
-          (pediatria, obstetrícia ou adulto).
-        </p>
-      </div>
-    </main>
-      </section>
-
-      <section class="destination-card">
-        <div class="destination-title">Unidade recomendada</div>
-
-        <div class="hospital-name" id="destinoNomeAmarelo">
-          <!-- dinamicamente preenchido -->
-        </div>
-
-        <div class="hospital-meta" id="destinoMetaAmarelo">
-          <!-- dinamicamente preenchido -->
-        </div>
-
-        <div class="qr-area">
-          <div class="qr-box">
-            QR CODE<br />CHECK-IN
-          </div>
-          <div class="qr-text">
-            Ao chegar, apresente este código para acelerar seu cadastro
-            e priorizar sua triagem de enfermagem.
-            <br /><br />
-            <span class="qr-code-label">ID de chegada: <span id="idChegadaAmarelo">ALFA-92F4</span></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="other-options">
-        <div class="options-title">Você também pode</div>
-
-        <div class="option-row">
-          <div class="option-desc">
-            <div class="option-headline" id="optTeleTitulo">Falar com um profissional agora</div>
-            <div class="option-detail" id="optTeleDesc">Telemedicina imediata com profissional conveniado.</div>
-          </div>
-          <button class="option-action-btn">INICIAR VÍDEO</button>
-        </div>
-
-        <div class="option-row">
-          <div class="option-desc">
-            <div class="option-headline" id="optConsultaTitulo">Agendar consulta presencial</div>
-            <div class="option-detail" id="optConsultaDesc">Clínica parceira amanhã cedo, menor custo que PA.</div>
-          </div>
-          <button class="option-action-btn">AGENDAR</button>
-        </div>
-
-        <div class="option-row">
-          <div class="option-desc">
-            <div class="option-headline" id="optAPBTitulo">Atendimento em casa (APB)</div>
-            <div class="option-detail" id="optAPBDesc">Profissional credenciado vai até sua residência.</div>
-          </div>
-          <button class="option-action-btn">SOLICITAR VISITA</button>
-        </div>
-      </section>
-    </main>
-
-    <!-- RESULTADO VERDE -->
-    <main id="tela-verde">
-      <section class="risk-card risk-green">
-        <div class="risk-header">
-          <div class="risk-left">
-            <h2>Classificação sugerida</h2>
-          </div>
-          <div class="risk-level-pill" id="verdeLabel">VERDE • BAIXA URGÊNCIA</div>
-        </div>
-
-        <p class="risk-main-text" id="textoVerdeTitulo">
-          Seu quadro não parece urgente.
-        </p>
-
-        <p class="risk-detail" id="textoVerdeDetalhe">
-          Você pode ser atendido(a) sem precisar de pronto-socorro agora.
-        </p>
-      </section>
-
-      <section class="other-options">
-        <div class="options-title" id="verdeOpcoesTitulo">Opções de atendimento</div>
-
-        <div class="option-row">
-          <div class="option-desc">
-            <div class="option-headline" id="verdeTeleTitulo">Telemedicina agora</div>
-            <div class="option-detail" id="verdeTeleDesc">Fale com um profissional conveniado por vídeo neste momento.</div>
-          </div>
-          <button class="option-action-btn">INICIAR VÍDEO</button>
-        </div>
-
-        <div class="option-row">
-          <div class="option-desc">
-            <div class="option-headline" id="verdeConsultaTitulo">Marcar consulta em consultório</div>
-            <div class="option-detail" id="verdeConsultaDesc">Agenda ambulatorial em horário comercial.</div>
-          </div>
-          <button class="option-action-btn">AGENDAR</button>
-        </div>
-
-        <div class="option-row">
-          <div class="option-desc">
-            <div class="option-headline" id="verdeAPBTitulo">Atendimento em casa (APB)</div>
-            <div class="option-detail" id="verdeAPBDesc">Avaliação domiciliar particular conveniada.</div>
-          </div>
-          <button class="option-action-btn">SOLICITAR VISITA</button>
-        </div>
-      </section>
-    </main>
-
-    <!-- RESULTADO AZUL -->
-    <main id="tela-azul">
-      <section class="risk-card risk-blue">
-        <div class="risk-header">
-          <div class="risk-left">
-            <h2>Classificação sugerida</h2>
-          </div>
-          <div class="risk-level-pill" id="azulLabel">AZUL • NÃO URGENTE</div>
-        </div>
-
-        <p class="risk-main-text" id="textoAzulTitulo">
-          Sua situação parece não urgente.
-        </p>
-
-        <p class="risk-detail" id="textoAzulDetalhe">
-          Você não precisa de pronto-socorro neste momento.
-        </p>
-      </section>
-
-      <section class="other-options">
-        <div class="options-title" id="azulOpcoesTitulo">Cuidar agora sem ir ao hospital</div>
-
-        <div class="option-row">
-          <div class="option-desc">
-            <div class="option-headline" id="azulTeleTitulo">Telemedicina</div>
-            <div class="option-detail" id="azulTeleDesc">Tire dúvidas agora com profissional conveniado.</div>
-          </div>
-          <button class="option-action-btn">FALAR AGORA</button>
-        </div>
-
-        <div class="option-row">
-          <div class="option-desc">
-            <div class="option-headline" id="azulConsultaTitulo">Consulta presencial programada</div>
-            <div class="option-detail" id="azulConsultaDesc">Marque no horário que for melhor pra você.</div>
-          </div>
-          <button class="option-action-btn">AGENDAR</button>
-        </div>
-
-        <div class="option-row">
-          <div class="option-desc">
-            <div class="option-headline" id="azulAPBTitulo">Atendimento em casa (APB)</div>
-            <div class="option-detail" id="azulAPBDesc">Atendimento domiciliar eletivo.</div>
-          </div>
-          <button class="option-action-btn">SOLICITAR VISITA</button>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>
-        <strong>Atenção:</strong> Esta avaliação é preliminar e não substitui
-        a classificação de risco oficial realizada pela enfermagem.
+      <p class="risk-main-text" id="textoCriticoTitulo">
+        Você precisa de avaliação de emergência agora.
       </p>
-      <p style="margin-top:8px;">
-        Seus dados são protegidos conforme a LGPD.
-      </p>
-    </footer>
-  </div>
 
-  <script>
-    // === PEGAR ELEMENTOS DAS TELAS ===
-    const telaCadastro1 = document.getElementById("tela-cadastro-1");
-    const telaCadastro2 = document.getElementById("tela-cadastro-2");
-    const telaPerguntas = document.getElementById("tela-perguntas");
-    const telaVermelho = document.getElementById("tela-vermelho");
-    const telaAmarelo = document.getElementById("tela-amarelo");
-    const telaVerde = document.getElementById("tela-verde");
-    const telaAzul = document.getElementById("tela-azul");
-    const headerTitle = document.getElementById("headerTitle");
-    const headerSubtitle = document.getElementById("headerSubtitle");
-    // Campos cadastro
-    const nomeInput = document.getElementById("nome");
-    const idadeInput = document.getElementById("idade");
-    const cpfInput = document.getElementById("cpf");
-    const convenioInput = document.getElementById("convenio");
-    const aceiteLGPD = document.getElementById("aceiteLGPD");
-    // Campos anamnese
-    const comorbInput = document.getElementById("comorb");
-    const medsInput = document.getElementById("medicacoes");
-    const alergiasInput = document.getElementById("alergias");
-    const historicoFamInput = document.getElementById("historicoFam");
-    const gestanteInput = document.getElementById("gestante");
-    // Sintomas
-    const chkPeito = document.getElementById("sintoma-peito");
-    const chkFaltaAr = document.getElementById("sintoma-falta-ar");
-    const chkFebre = document.getElementById("sintoma-febre");
-    const chkVomito = document.getElementById("sintoma-vomito");
-    const chkTrauma = document.getElementById("sintoma-trauma");
-    const chkCefaleia = document.getElementById("sintoma-cefaleia");
-    const chkOutro = document.getElementById("sintoma-outro");
-    // Botões
-    const btnIrAnamnese = document.getElementById("btn-ir-anamnese");
-    const btnIrTriagem = document.getElementById("btn-ir-triagem");
-    const btnAvancar = document.getElementById("btn-avancar");
-    // Campos de destino dinâmico
-    const destinoNomeCritico = document.getElementById("destinoNomeCritico");
-    const destinoMetaCritico = document.getElementById("destinoMetaCritico");
-    const destinoNomeAmarelo = document.getElementById("destinoNomeAmarelo");
-    const destinoMetaAmarelo = document.getElementById("destinoMetaAmarelo");
-    // === FUNÇÕES DE SUPORTE ===
-    function mostrarTela(tela) {
-      [
-        telaCadastro1,
-        telaCadastro2,
-        telaPerguntas,
-        telaVermelho,
-        telaAmarelo,
-        telaVerde,
-        telaAzul
-      ].forEach(t => t.classList.remove("active"));
-      tela.classList.add("active");
-      if (tela === telaCadastro1) {
-        headerTitle.textContent = "IDENTIFICAÇÃO";
-        headerSubtitle.textContent = "DADOS BÁSICOS E LGPD";
-      } else if (tela === telaCadastro2) {
-        headerTitle.textContent = "HISTÓRICO CLÍNICO";
-        headerSubtitle.textContent = "COMORBIDADES • MEDICAÇÕES • GESTAÇÃO";
-      } else if (tela === telaPerguntas) {
-        headerTitle.textContent = "PRÉ-TRIAGEM";
-        headerSubtitle.textContent = "AVALIAÇÃO INICIAL • NÃO É DIAGNÓSTICO";
-      } else if (tela === telaVermelho) {
-        headerTitle.textContent = "EMERGÊNCIA IMEDIATA";
-        headerSubtitle.textContent = "ALTA PRIORIDADE • PROCURE ATENDIMENTO AGORA";
-      } else if (tela === telaAmarelo) {
-        headerTitle.textContent = "RESULTADO DA PRÉ-TRIAGEM";
-        headerSubtitle.textContent = "ATENDIMENTO PRESENCIAL HOJE";
-      } else if (tela === telaVerde) {
-        headerTitle.textContent = "RESULTADO DA PRÉ-TRIAGEM";
-        headerSubtitle.textContent = "BAIXA URGÊNCIA • CANAL PROGRAMÁVEL";
-      } else if (tela === telaAzul) {
-        headerTitle.textContent = "RESULTADO DA PRÉ-TRIAGEM";
-        headerSubtitle.textContent = "NÃO URGENTE • CUIDADO ELETIVO";
+      <p class="risk-detail" id="textoCriticoDetalhe">
+        Seus sinais indicam risco alto e você deve ser visto(a) sem demora.
+      </p>
+
+      <div class="emergency-callout" id="textoCriticoAlerta">
+        Se você NÃO consegue ir em segurança até a unidade indicada,
+        acione imediatamente o serviço de emergência da sua região 
+        CLICANDO AQUI</button>.
+      </div>
+    </section>
+
+    <section class="destination-card">
+      <div class="destination-title">Vá agora para</div>
+
+      <div class="hospital-name" id="destinoNomeCritico">
+        <!-- dinamicamente preenchido -->
+      </div>
+
+      <div class="hospital-meta" id="destinoMetaCritico">
+        <!-- dinamicamente preenchido -->
+      </div>
+
+      <div class="qr-area">
+        <div class="qr-box">
+          QR CODE<br/>PRIORIDADE
+        </div>
+        <div class="qr-text">
+          Mostre este código na recepção de emergência.
+          <br/><br/>
+          <span class="qr-code-label">Alerta enviado: SIM</span><br/>
+          ID de chegada: <span id="idChegadaCritico">CRIT-7B21</span>
+        </div>
+      </div>
+
+      <div class="arrival-note" id="arrivalCriticoNote">
+        Ao chegar, informe:<br/>
+        “Classificação sugerida vermelha pelo app.”
+      </div>
+    </section>
+
+    <section class="warning-card" id="warningCritico">
+      Telemedicina, consulta ambulatorial ou atendimento domiciliar
+      NÃO são seguros neste momento. Procure diretamente a unidade indicada.
+    </section>
+  </main>
+
+  <!-- RESULTADO AMARELO -->
+  <main id="tela-amarelo">
+    <section class="risk-card risk-yellow">
+      <div class="risk-header">
+        <div class="risk-left"><h2>Classificação sugerida</h2></div>
+        <div class="risk-level-pill" id="amareloLabel">AMARELO • PRIORIDADE MODERADA</div>
+      </div>
+
+      <p class="risk-main-text" id="textoAmareloTitulo">
+        Você precisa de avaliação presencial hoje.
+      </p>
+
+      <p class="risk-detail" id="textoAmareloDetalhe">
+        Seu quadro não parece crítico imediato, mas requer atendimento
+        em unidade com equipe disponível.
+      </p>
+    </section>
+
+    <section class="destination-card">
+      <div class="destination-title">Unidade recomendada</div>
+
+      <div class="hospital-name" id="destinoNomeAmarelo">
+        <!-- dinamicamente preenchido -->
+      </div>
+
+      <div class="hospital-meta" id="destinoMetaAmarelo">
+        <!-- dinamicamente preenchido -->
+      </div>
+
+      <div class="qr-area">
+        <div class="qr-box">
+          QR CODE<br/>CHECK-IN
+        </div>
+        <div class="qr-text">
+          Ao chegar, apresente este código para acelerar seu cadastro
+          e priorizar sua triagem de enfermagem.
+          <br/><br/>
+          <span class="qr-code-label">ID de chegada: <span id="idChegadaAmarelo">ALFA-92F4</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="other-options">
+      <div class="options-title">Você também pode</div>
+
+      <div class="option-row">
+        <div class="option-desc">
+          <div class="option-headline" id="optTeleTitulo">Falar com um profissional agora</div>
+          <div class="option-detail" id="optTeleDesc">Telemedicina imediata com profissional conveniado.</div>
+        </div>
+        <button class="option-action-btn">INICIAR VÍDEO</button>
+      </div>
+
+      <div class="option-row">
+        <div class="option-desc">
+          <div class="option-headline" id="optConsultaTitulo">Agendar consulta presencial</div>
+          <div class="option-detail" id="optConsultaDesc">Clínica parceira amanhã cedo, menor custo que PA.</div>
+        </div>
+        <button class="option-action-btn">AGENDAR</button>
+      </div>
+
+      <div class="option-row">
+        <div class="option-desc">
+          <div class="option-headline" id="optAPBTitulo">Atendimento em casa (APB)</div>
+          <div class="option-detail" id="optAPBDesc">Profissional credenciado vai até sua residência.</div>
+        </div>
+        <button class="option-action-btn">SOLICITAR VISITA</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- RESULTADO VERDE -->
+  <main id="tela-verde">
+    <section class="risk-card risk-green">
+      <div class="risk-header">
+        <div class="risk-left"><h2>Classificação sugerida</h2></div>
+        <div class="risk-level-pill" id="verdeLabel">VERDE • BAIXA URGÊNCIA</div>
+      </div>
+
+      <p class="risk-main-text" id="textoVerdeTitulo">
+        Seu quadro não parece urgente.
+      </p>
+
+      <p class="risk-detail" id="textoVerdeDetalhe">
+        Você pode ser atendido(a) sem precisar de pronto-socorro agora.
+      </p>
+    </section>
+
+    <section class="other-options">
+      <div class="options-title" id="verdeOpcoesTitulo">Opções de atendimento</div>
+
+      <div class="option-row">
+        <div class="option-desc">
+          <div class="option-headline" id="verdeTeleTitulo">Telemedicina agora</div>
+          <div class="option-detail" id="verdeTeleDesc">Fale com um profissional conveniado por vídeo neste momento.</div>
+        </div>
+        <button class="option-action-btn">INICIAR VÍDEO</button>
+      </div>
+
+      <div class="option-row">
+        <div class="option-desc">
+          <div class="option-headline" id="verdeConsultaTitulo">Marcar consulta em consultório</div>
+          <div class="option-detail" id="verdeConsultaDesc">Agenda ambulatorial em horário comercial.</div>
+        </div>
+        <button class="option-action-btn">AGENDAR</button>
+      </div>
+
+      <div class="option-row">
+        <div class="option-desc">
+          <div class="option-headline" id="verdeAPBTitulo">Atendimento em casa (APB)</div>
+          <div class="option-detail" id="verdeAPBDesc">Avaliação domiciliar particular conveniada.</div>
+        </div>
+        <button class="option-action-btn">SOLICITAR VISITA</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- RESULTADO AZUL -->
+  <main id="tela-azul">
+    <section class="risk-card risk-blue">
+      <div class="risk-header">
+        <div class="risk-left"><h2>Classificação sugerida</h2></div>
+        <div class="risk-level-pill" id="azulLabel">AZUL • NÃO URGENTE</div>
+      </div>
+
+      <p class="risk-main-text" id="textoAzulTitulo">
+        Sua situação parece não urgente.
+      </p>
+
+      <p class="risk-detail" id="textoAzulDetalhe">
+        Você não precisa de pronto-socorro neste momento.
+      </p>
+    </section>
+
+    <section class="other-options">
+      <div class="options-title" id="azulOpcoesTitulo">Cuidar agora sem ir ao hospital</div>
+
+      <div class="option-row">
+        <div class="option-desc">
+          <div class="option-headline" id="azulTeleTitulo">Telemedicina</div>
+          <div class="option-detail" id="azulTeleDesc">Tire dúvidas agora com profissional conveniado.</div>
+        </div>
+        <button class="option-action-btn">FALAR AGORA</button>
+      </div>
+
+      <div class="option-row">
+        <div class="option-desc">
+          <div class="option-headline" id="azulConsultaTitulo">Consulta presencial programada</div>
+          <div class="option-detail" id="azulConsultaDesc">Marque no horário que for melhor pra você.</div>
+        </div>
+        <button class="option-action-btn">AGENDAR</button>
+      </div>
+
+      <div class="option-row">
+        <div class="option-desc">
+          <div class="option-headline" id="azulAPBTitulo">Atendimento em casa (APB)</div>
+          <div class="option-detail" id="azulAPBDesc">Atendimento domiciliar eletivo.</div>
+        </div>
+        <button class="option-action-btn">SOLICITAR VISITA</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <strong>Atenção:</strong> Esta avaliação é preliminar e não substitui
+      a classificação de risco oficial realizada pela enfermagem.
+    </p>
+    <p style="margin-top:8px;">
+      Seus dados são protegidos conforme a LGPD.
+    </p>
+  </footer>
+</div>
+
+<script>
+  // === PEGAR ELEMENTOS DAS TELAS ===
+  const telaCadastro1 = document.getElementById("tela-cadastro-1");
+  const telaCadastro2 = document.getElementById("tela-cadastro-2");
+  const telaPerguntas = document.getElementById("tela-perguntas");
+  const telaVermelho  = document.getElementById("tela-vermelho");
+  const telaAmarelo   = document.getElementById("tela-amarelo");
+  const telaVerde     = document.getElementById("tela-verde");
+  const telaAzul      = document.getElementById("tela-azul");
+
+  const headerTitle    = document.getElementById("headerTitle");
+  const headerSubtitle = document.getElementById("headerSubtitle");
+
+  // Campos cadastro
+  const nomeInput     = document.getElementById("nome");
+  const idadeInput    = document.getElementById("idade");
+  const cpfInput      = document.getElementById("cpf");
+  const convenioInput = document.getElementById("convenio");
+  const aceiteLGPD    = document.getElementById("aceiteLGPD");
+
+  // Campos anamnese
+  const comorbInput       = document.getElementById("comorb");
+  const medsInput         = document.getElementById("medicacoes");
+  const alergiasInput     = document.getElementById("alergias");
+  const historicoFamInput = document.getElementById("historicoFam");
+  const gestanteInput     = document.getElementById("gestante");
+
+  // Sintomas
+  const chkPeito    = document.getElementById("sintoma-peito");
+  const chkFaltaAr  = document.getElementById("sintoma-falta-ar");
+  const chkFebre    = document.getElementById("sintoma-febre");
+  const chkVomito   = document.getElementById("sintoma-vomito");
+  const chkTrauma   = document.getElementById("sintoma-trauma");
+  const chkCefaleia = document.getElementById("sintoma-cefaleia");
+  const chkOutro    = document.getElementById("sintoma-outro");
+
+  // Botões
+  const btnIrAnamnese = document.getElementById("btn-ir-anamnese");
+  const btnIrTriagem  = document.getElementById("btn-ir-triagem");
+  const btnAvancar    = document.getElementById("btn-avancar");
+
+  // Campos de destino dinâmico
+  const destinoNomeCritico   = document.getElementById("destinoNomeCritico");
+  const destinoMetaCritico   = document.getElementById("destinoMetaCritico");
+  const destinoNomeAmarelo   = document.getElementById("destinoNomeAmarelo");
+  const destinoMetaAmarelo   = document.getElementById("destinoMetaAmarelo");
+
+  // === FUNÇÕES DE SUPORTE ===
+
+  function mostrarTela(tela) {
+    [
+      telaCadastro1,
+      telaCadastro2,
+      telaPerguntas,
+      telaVermelho,
+      telaAmarelo,
+      telaVerde,
+      telaAzul
+    ].forEach(t => t.classList.remove("active"));
+
+    tela.classList.add("active");
+
+    if (tela === telaCadastro1) {
+      headerTitle.textContent    = "IDENTIFICAÇÃO";
+      headerSubtitle.textContent = "DADOS BÁSICOS E LGPD";
+    } else if (tela === telaCadastro2) {
+      headerTitle.textContent    = "HISTÓRICO CLÍNICO";
+      headerSubtitle.textContent = "COMORBIDADES • MEDICAÇÕES • GESTAÇÃO";
+    } else if (tela === telaPerguntas) {
+      headerTitle.textContent    = "PRÉ-TRIAGEM";
+      headerSubtitle.textContent = "AVALIAÇÃO INICIAL • NÃO É DIAGNÓSTICO";
+    } else if (tela === telaVermelho) {
+      headerTitle.textContent    = "EMERGÊNCIA IMEDIATA";
+      headerSubtitle.textContent = "ALTA PRIORIDADE • PROCURE ATENDIMENTO AGORA";
+    } else if (tela === telaAmarelo) {
+      headerTitle.textContent    = "RESULTADO DA PRÉ-TRIAGEM";
+      headerSubtitle.textContent = "ATENDIMENTO PRESENCIAL HOJE";
+    } else if (tela === telaVerde) {
+      headerTitle.textContent    = "RESULTADO DA PRÉ-TRIAGEM";
+      headerSubtitle.textContent = "BAIXA URGÊNCIA • CANAL PROGRAMÁVEL";
+    } else if (tela === telaAzul) {
+      headerTitle.textContent    = "RESULTADO DA PRÉ-TRIAGEM";
+      headerSubtitle.textContent = "NÃO URGENTE • CUIDADO ELETIVO";
+    }
+
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+
+  // Define linha de cuidado: pediatria / obstetrico / adulto
+  function linhaDeCuidado(idade, gestanteVal) {
+    const ageNum = parseInt(idade, 10);
+    if (!isNaN(ageNum) && ageNum < 18) return "pediatria";
+    if (gestanteVal === "sim") return "obstetrico";
+    return "adulto";
+  }
+
+  // Risco base por sintoma
+  function riscoBase() {
+    const critico =
+      chkPeito.checked ||
+      chkFaltaAr.checked ||
+      chkCefaleia.checked;
+
+    const moderado =
+      chkFebre.checked ||
+      chkVomito.checked ||
+      chkTrauma.checked;
+
+    const leve = chkOutro.checked;
+
+    if (critico) return "vermelho";
+    if (moderado) return "amarelo";
+    if (leve)    return "verde";
+    return "azul";
+  }
+
+  // Ajustes especiais de risco
+  function ajustarRisco(riscoAtual, linha) {
+    // Pediatria: febre + vômito => sobe um nível (demonstra risco de desidratação / letargia)
+    if (linha === "pediatria") {
+      if (chkFebre.checked && chkVomito.checked) {
+        if (riscoAtual === "amarelo") return "vermelho";
+        if (riscoAtual === "verde")   return "amarelo";
       }
-      
-      window.scrollTo({
-        top: 0,
-        behavior: "instant"
-      });
     }
-    // Define linha de cuidado: pediatria / obstetrico / adulto
-    function linhaDeCuidado(idade, gestanteVal) {
-      const ageNum = parseInt(idade, 10);
-      if (!isNaN(ageNum) && ageNum < 18) return "pediatria";
-      if (gestanteVal === "sim") return "obstetrico";
-      return "adulto";
+
+    // Obstétrico: qualquer desconforto + potencial instabilidade sobe
+    if (linha === "obstetrico") {
+      if (chkVomito.checked || chkFebre.checked) {
+        if (riscoAtual === "verde" || riscoAtual === "azul") {
+          riscoAtual = "amarelo";
+        }
+      }
+      if (chkFaltaAr.checked || chkPeito.checked) {
+        return "vermelho";
+      }
     }
-    // Risco base por sintoma
-    function riscoBase() {
-      const critico =
-        chkPeito.checked ||
-        chkFaltaAr.checked ||
-        chkCefaleia.checked;
-      const moderado =
-        chkFebre.checked ||
-        chkVomito.checked ||
-        chkTrauma.checked;
-      const leve = chkOutro.checked;
-      if (critico) return "vermelho";
-      if (moderado) return "amarelo";
-      if (leve) return "verde";
-      return "azul";
-    }
-    // Ajustes especiais de risco
-    function ajustarRisco(riscoAtual, linha) {
-      // Pediatria: febre + vômito => sobe um nível (demonstra risco de desidratação / letargia)
+
+    return riscoAtual;
+  }
+
+  // Preenche textos de destino conforme linha e risco
+  function preencherDestino(linha, risco) {
+    if (risco === "vermelho") {
       if (linha === "pediatria") {
-        if (chkFebre.checked && chkVomito.checked) {
-          if (riscoAtual === "amarelo") return "vermelho";
-          if (riscoAtual === "verde") return "amarelo";
-        }
-      }
-      // Obstétrico: qualquer desconforto + potencial instabilidade sobe
-      if (linha === "obstetrico") {
-        if (chkVomito.checked || chkFebre.checked) {
-          if (riscoAtual === "verde" || riscoAtual === "azul") {
-            riscoAtual = "amarelo";
-          }
-        }
-        if (chkFaltaAr.checked || chkPeito.checked) {
-          return "vermelho";
-        }
-      }
-      return riscoAtual;
-    }
-    // Preenche textos de destino conforme linha e risco
-    function preencherDestino(linha, risco) {
-      if (risco === "vermelho") {
-        if (linha === "pediatria") {
-          destinoNomeCritico.textContent = "Pronto Atendimento Pediátrico de Alta Complexidade";
-          destinoMetaCritico.innerHTML =
-            "Equipe pediátrica 24h • Suporte UTI pediátrica/neonatal<br/>Distância estimada: 1,4 km";
-        } else if (linha === "obstetrico") {
-          destinoNomeCritico.textContent = "Pronto Atendimento Obstétrico / Maternidade Parceira";
-          destinoMetaCritico.innerHTML =
-            "Equipe obstétrica 24h • Avaliação materno-fetal imediata<br/>Sala de emergência obstétrica dedicada";
-        } else {
-          destinoNomeCritico.textContent = "Hospital Referência Alta Complexidade (Adulto)";
-          destinoMetaCritico.innerHTML =
-            "Cardio / Neuro / Cirurgia de plantão • UTI adulto imediata<br/>Distância estimada: 1,1 km";
-        }
-      }
-      if (risco === "amarelo") {
-        if (linha === "pediatria") {
-          destinoNomeAmarelo.textContent = "Pronto Atendimento Pediátrico Conveniado";
-          destinoMetaAmarelo.innerHTML =
-            "Pediatria 24h • Exames básicos rápidos<br/>Menor complexidade que UTI • Distância estimada: 2,0 km";
-        } else if (linha === "obstetrico") {
-          destinoNomeAmarelo.textContent = "Pronto Atendimento Obstétrico / Maternidade";
-          destinoMetaAmarelo.innerHTML =
-            "Avaliação obstétrica e ultrassom no mesmo dia<br/>Acesso direto à equipe de GO";
-        } else {
-          destinoNomeAmarelo.textContent = "Hospital Conveniado Alfa – Pronto Atendimento Adulto";
-          destinoMetaAmarelo.innerHTML =
-            "Clínica Geral 24h • Exames rápidos • Média complexidade<br/>Distância estimada: 2,3 km";
-        }
-      }
-      // Atualizar textos de telemedicina/APB pra linha certa
-      const area =
-        linha === "pediatria" ? "pediatra / enfermagem pediátrica" :
-        linha === "obstetrico" ? "equipe obstétrica" :
-        "médico conveniado";
-      // Amarelo
-      document.getElementById("optTeleDesc").textContent =
-        `Telemedicina imediata com ${area}.`;
-      if (linha === "pediatria") {
-        document.getElementById("optConsultaTitulo").textContent = "Agendar avaliação pediátrica presencial";
-        document.getElementById("optConsultaDesc").textContent = "Clínica pediátrica parceira, menor custo que pronto-socorro.";
-        document.getElementById("optAPBTitulo").textContent = "Pediatra em casa (APB)";
-        document.getElementById("optAPBDesc").textContent = "Profissional credenciado vai até sua residência.";
+        destinoNomeCritico.textContent = "Pronto Atendimento Pediátrico de Alta Complexidade";
+        destinoMetaCritico.innerHTML =
+          "Equipe pediátrica 24h • Suporte UTI pediátrica/neonatal<br/>Distância estimada: 1,4 km";
       } else if (linha === "obstetrico") {
-        document.getElementById("optConsultaTitulo").textContent = "Avaliação obstétrica presencial";
-        document.getElementById("optConsultaDesc").textContent = "Maternidade parceira, acesso direto à GO.";
-        document.getElementById("optAPBTitulo").textContent = "Visita obstétrica domiciliar (APB)";
-        document.getElementById("optAPBDesc").textContent = "Profissional credenciado vai até você.";
+        destinoNomeCritico.textContent = "Pronto Atendimento Obstétrico / Maternidade Parceira";
+        destinoMetaCritico.innerHTML =
+          "Equipe obstétrica 24h • Avaliação materno-fetal imediata<br/>Sala de emergência obstétrica dedicada";
       } else {
-        document.getElementById("optConsultaTitulo").textContent = "Agendar consulta presencial";
-        document.getElementById("optConsultaDesc").textContent = "Clínica parceira amanhã cedo, menor custo que PA.";
-        document.getElementById("optAPBTitulo").textContent = "Médico em casa (APB)";
-        document.getElementById("optAPBDesc").textContent = "Profissional credenciado vai até sua residência.";
-      }
-      // Verde / Azul
-      const verdeTeleTitulo = document.getElementById("verdeTeleTitulo");
-      const verdeTeleDesc = document.getElementById("verdeTeleDesc");
-      const verdeConsultaTitulo = document.getElementById("verdeConsultaTitulo");
-      const verdeConsultaDesc = document.getElementById("verdeConsultaDesc");
-      const verdeAPBTitulo = document.getElementById("verdeAPBTitulo");
-      const verdeAPBDesc = document.getElementById("verdeAPBDesc");
-      const azulTeleTitulo = document.getElementById("azulTeleTitulo");
-      const azulTeleDesc = document.getElementById("azulTeleDesc");
-      const azulConsultaTitulo = document.getElementById("azulConsultaTitulo");
-      const azulConsultaDesc = document.getElementById("azulConsultaDesc");
-      const azulAPBTitulo = document.getElementById("azulAPBTitulo");
-      const azulAPBDesc = document.getElementById("azulAPBDesc");
-      verdeTeleTitulo.textContent = "Telemedicina agora";
-      verdeTeleDesc.textContent = `Converse por vídeo com ${area} neste momento.`;
-      azulTeleTitulo.textContent = "Telemedicina";
-      azulTeleDesc.textContent = `Tire dúvidas agora com ${area}.`;
-      if (linha === "pediatria") {
-        verdeConsultaTitulo.textContent = "Consulta pediátrica em consultório";
-        verdeConsultaDesc.textContent = "Atendimento ambulatorial programado.";
-        verdeAPBTitulo.textContent = "Pediatra em casa (APB)";
-        verdeAPBDesc.textContent = "Avaliação domiciliar particular.";
-        azulConsultaTitulo.textContent = "Consulta pediátrica programada";
-        azulConsultaDesc.textContent = "Escolha o melhor horário.";
-        azulAPBTitulo.textContent = "Pediatra em casa (APB)";
-        azulAPBDesc.textContent = "Atendimento domiciliar eletivo.";
-      } else if (linha === "obstetrico") {
-        verdeConsultaTitulo.textContent = "Consulta obstétrica presencial";
-        verdeConsultaDesc.textContent = "Agende na maternidade parceira.";
-        verdeAPBTitulo.textContent = "Visita obstétrica domiciliar (APB)";
-        verdeAPBDesc.textContent = "Avaliação em casa, se disponível.";
-        azulConsultaTitulo.textContent = "Consulta obstétrica programada";
-        azulConsultaDesc.textContent = "Horário combinado com GO.";
-        azulAPBTitulo.textContent = "Visita obstétrica domiciliar (APB)";
-        azulAPBDesc.textContent = "Atendimento eletivo em casa.";
-      } else {
-        verdeConsultaTitulo.textContent = "Consulta em consultório";
-        verdeConsultaDesc.textContent = "Agenda ambulatorial em horário comercial.";
-        verdeAPBTitulo.textContent = "Médico em casa (APB)";
-        verdeAPBDesc.textContent = "Atendimento domiciliar particular conveniado.";
-        azulConsultaTitulo.textContent = "Consulta presencial programada";
-        azulConsultaDesc.textContent = "Marque no horário que preferir.";
-        azulAPBTitulo.textContent = "Médico em casa (APB)";
-        azulAPBDesc.textContent = "Atendimento domiciliar eletivo.";
+        destinoNomeCritico.textContent = "Hospital Referência Alta Complexidade (Adulto)";
+        destinoMetaCritico.innerHTML =
+          "Cardio / Neuro / Cirurgia de plantão • UTI adulto imediata<br/>Distância estimada: 1,1 km";
       }
     }
-    // === EVENTOS DE NAVEGAÇÃO ===
-    // Cadastro 1 -> Cadastro 2
-    btnIrAnamnese.addEventListener("click", () => {
-      const nomeValido = nomeInput.value.trim().length > 2;
-      const idadeValida = idadeInput.value.trim() !== "" && !isNaN(parseInt(idadeInput.value.trim(), 10));
-      const cpfValido = cpfInput.value.trim().length > 5;
-      const convValido = convenioInput.value.trim().length > 2;
-      const consentido = aceiteLGPD.checked;
-      if (!nomeValido || !idadeValida || !cpfValido || !convValido || !consentido) {
-        alert("Por favor, preencha nome, idade, CPF, convênio e aceite o uso assistencial (LGPD).");
-        return;
-      }
-      mostrarTela(telaCadastro2);
-    });
-    // Cadastro 2 -> Perguntas
-    btnIrTriagem.addEventListener("click", () => {
-      // (No MVP não vamos bloquear se anamnese estiver vazia)
-      mostrarTela(telaPerguntas);
-    });
-    // Perguntas -> Resultado
-    btnAvancar.addEventListener("click", () => {
-      const idadeNum = idadeInput.value.trim();
-      const linha = linhaDeCuidado(idadeNum, gestanteInput.value);
-      let risco = riscoBase();
-      risco = ajustarRisco(risco, linha);
-      // Ajusta textos/destinos com base na linha e risco
-      preencherDestino(linha, risco);
-      // Abre a tela certa
-      if (risco === "vermelho") {
-        mostrarTela(telaVermelho);
-      } else if (risco === "amarelo") {
-        mostrarTela(telaAmarelo);
-      } else if (risco === "verde") {
-        mostrarTela(telaVerde);
+
+    if (risco === "amarelo") {
+      if (linha === "pediatria") {
+        destinoNomeAmarelo.textContent = "Pronto Atendimento Pediátrico Conveniado";
+        destinoMetaAmarelo.innerHTML =
+          "Pediatria 24h • Exames básicos rápidos<br/>Menor complexidade que UTI • Distância estimada: 2,0 km";
+      } else if (linha === "obstetrico") {
+        destinoNomeAmarelo.textContent = "Pronto Atendimento Obstétrico / Maternidade";
+        destinoMetaAmarelo.innerHTML =
+          "Avaliação obstétrica e ultrassom no mesmo dia<br/>Acesso direto à equipe de GO";
       } else {
-        mostrarTela(telaAzul);
+        destinoNomeAmarelo.textContent = "Hospital Conveniado Alfa – Pronto Atendimento Adulto";
+        destinoMetaAmarelo.innerHTML =
+          "Clínica Geral 24h • Exames rápidos • Média complexidade<br/>Distância estimada: 2,3 km";
       }
-    });
-    // Inicia na tela 1
-    mostrarTela(telaCadastro1);
-  </script>
+    }
+
+    // Atualizar textos de telemedicina/APB pra linha certa
+    const area =
+      linha === "pediatria"   ? "pediatra / enfermagem pediátrica" :
+      linha === "obstetrico"  ? "equipe obstétrica" :
+                                 "médico conveniado";
+
+    // Amarelo
+    document.getElementById("optTeleDesc").textContent =
+      `Telemedicina imediata com ${area}.`;
+
+    if (linha === "pediatria") {
+      document.getElementById("optConsultaTitulo").textContent = "Agendar avaliação pediátrica presencial";
+      document.getElementById("optConsultaDesc").textContent   = "Clínica pediátrica parceira, menor custo que pronto-socorro.";
+      document.getElementById("optAPBTitulo").textContent      = "Pediatra em casa (APB)";
+      document.getElementById("optAPBDesc").textContent        = "Profissional credenciado vai até sua residência.";
+
+    } else if (linha === "obstetrico") {
+      document.getElementById("optConsultaTitulo").textContent = "Avaliação obstétrica presencial";
+      document.getElementById("optConsultaDesc").textContent   = "Maternidade parceira, acesso direto à GO.";
+      document.getElementById("optAPBTitulo").textContent      = "Visita obstétrica domiciliar (APB)";
+      document.getElementById("optAPBDesc").textContent        = "Profissional credenciado vai até você.";
+
+    } else {
+      document.getElementById("optConsultaTitulo").textContent = "Agendar consulta presencial";
+      document.getElementById("optConsultaDesc").textContent   = "Clínica parceira amanhã cedo, menor custo que PA.";
+      document.getElementById("optAPBTitulo").textContent      = "Médico em casa (APB)";
+      document.getElementById("optAPBDesc").textContent        = "Profissional credenciado vai até sua residência.";
+    }
+
+    // Verde / Azul
+    const verdeTeleTitulo   = document.getElementById("verdeTeleTitulo");
+    const verdeTeleDesc     = document.getElementById("verdeTeleDesc");
+    const verdeConsultaTitulo = document.getElementById("verdeConsultaTitulo");
+    const verdeConsultaDesc   = document.getElementById("verdeConsultaDesc");
+    const verdeAPBTitulo    = document.getElementById("verdeAPBTitulo");
+    const verdeAPBDesc      = document.getElementById("verdeAPBDesc");
+
+    const azulTeleTitulo    = document.getElementById("azulTeleTitulo");
+    const azulTeleDesc      = document.getElementById("azulTeleDesc");
+    const azulConsultaTitulo= document.getElementById("azulConsultaTitulo");
+    const azulConsultaDesc  = document.getElementById("azulConsultaDesc");
+    const azulAPBTitulo     = document.getElementById("azulAPBTitulo");
+    const azulAPBDesc       = document.getElementById("azulAPBDesc");
+
+    verdeTeleTitulo.textContent = "Telemedicina agora";
+    verdeTeleDesc.textContent   = `Converse por vídeo com ${area} neste momento.`;
+    azulTeleTitulo.textContent  = "Telemedicina";
+    azulTeleDesc.textContent    = `Tire dúvidas agora com ${area}.`;
+
+    if (linha === "pediatria") {
+      verdeConsultaTitulo.textContent = "Consulta pediátrica em consultório";
+      verdeConsultaDesc.textContent   = "Atendimento ambulatorial programado.";
+      verdeAPBTitulo.textContent      = "Pediatra em casa (APB)";
+      verdeAPBDesc.textContent        = "Avaliação domiciliar particular.";
+
+      azulConsultaTitulo.textContent  = "Consulta pediátrica programada";
+      azulConsultaDesc.textContent    = "Escolha o melhor horário.";
+      azulAPBTitulo.textContent       = "Pediatra em casa (APB)";
+      azulAPBDesc.textContent         = "Atendimento domiciliar eletivo.";
+
+    } else if (linha === "obstetrico") {
+      verdeConsultaTitulo.textContent = "Consulta obstétrica presencial";
+      verdeConsultaDesc.textContent   = "Agende na maternidade parceira.";
+      verdeAPBTitulo.textContent      = "Visita obstétrica domiciliar (APB)";
+      verdeAPBDesc.textContent        = "Avaliação em casa, se disponível.";
+
+      azulConsultaTitulo.textContent  = "Consulta obstétrica programada";
+      azulConsultaDesc.textContent    = "Horário combinado com GO.";
+      azulAPBTitulo.textContent       = "Visita obstétrica domiciliar (APB)";
+      azulAPBDesc.textContent         = "Atendimento eletivo em casa.";
+
+    } else {
+      verdeConsultaTitulo.textContent = "Consulta em consultório";
+      verdeConsultaDesc.textContent   = "Agenda ambulatorial em horário comercial.";
+      verdeAPBTitulo.textContent      = "Médico em casa (APB)";
+      verdeAPBDesc.textContent        = "Atendimento domiciliar particular conveniado.";
+
+      azulConsultaTitulo.textContent  = "Consulta presencial programada";
+      azulConsultaDesc.textContent    = "Marque no horário que preferir.";
+      azulAPBTitulo.textContent       = "Médico em casa (APB)";
+      azulAPBDesc.textContent         = "Atendimento domiciliar eletivo.";
+    }
+  }
+
+  // === EVENTOS DE NAVEGAÇÃO ===
+
+  // Cadastro 1 -> Cadastro 2
+  btnIrAnamnese.addEventListener("click", () => {
+    const nomeValido     = nomeInput.value.trim().length > 2;
+    const idadeValida    = idadeInput.value.trim() !== "" && !isNaN(parseInt(idadeInput.value.trim(), 10));
+    const cpfValido      = cpfInput.value.trim().length > 5;
+    const convValido     = convenioInput.value.trim().length > 2;
+    const consentido     = aceiteLGPD.checked;
+
+    if (!nomeValido || !idadeValida || !cpfValido || !convValido || !consentido) {
+      alert("Por favor, preencha nome, idade, CPF, convênio e aceite o uso assistencial (LGPD).");
+      return;
+    }
+
+    mostrarTela(telaCadastro2);
+  });
+
+  // Cadastro 2 -> Perguntas
+  btnIrTriagem.addEventListener("click", () => {
+    // (No MVP não vamos bloquear se anamnese estiver vazia)
+    mostrarTela(telaPerguntas);
+  });
+
+  // Perguntas -> Resultado
+  btnAvancar.addEventListener("click", () => {
+    const idadeNum = idadeInput.value.trim();
+    const linha    = linhaDeCuidado(idadeNum, gestanteInput.value);
+
+    let risco = riscoBase();
+    risco = ajustarRisco(risco, linha);
+
+    // Ajusta textos/destinos com base na linha e risco
+    preencherDestino(linha, risco);
+
+    // Abre a tela certa
+    if (risco === "vermelho") {
+      mostrarTela(telaVermelho);
+    } else if (risco === "amarelo") {
+      mostrarTela(telaAmarelo);
+    } else if (risco === "verde") {
+      mostrarTela(telaVerde);
+    } else {
+      mostrarTela(telaAzul);
+    }
+  });
+
+  // Inicia na tela 1
+  mostrarTela(telaCadastro1);
+</script>
 
 </body>
-
 </html>
